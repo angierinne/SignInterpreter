@@ -359,7 +359,7 @@ function endGame() {
 	addUser();
 	// Uncomment when you want to export users. Or run in console
 	//exportUsers();
-	window.location = 'index.html';
+	window.location = 'new_model.html';
 }
 
 /**
