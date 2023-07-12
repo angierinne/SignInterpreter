@@ -17,13 +17,13 @@
 
     <div class="absolute top-1/2 flex mt-[2vw] w-full">
         <div id="modelSelectContainer" > 
-            <h1 class="text-[10vw]">🤖</h1>
+            <h1 class="ml-10 text-[10vw]">🤖</h1>
             <select onchange="switchModel()" id="modelSelect" class=" p-[1vw] opacity-50 hover:bg-amber-300 bg-amber-200 h-[20%] text-[2vw] text-center justify-center ml-[2vw] rounded-3xl mb-[10%]" style=" opacity: 0;">
                 <option value="summer" selected>Summer☀️</option>
                 <option value="winter">Winter❄️</option>
             </select>
         </div>
-        <div id="promptContainer" class="border-[10px] border-solid border-white text-[5vw] bg-amber-50 mt-[3vw] center  text-center align-middle mr-[10vw] ml-[1vw] w-full mb-[3vw] rounded-3xl justify-items-center">
+        <div id="promptContainer" class="border-[10px] border-solid border-white text-[5vw] bg-amber-50 mt-2 center  text-center align-middle mr-[10vw] ml-24 h-full w-full mb-[3vw] rounded-3xl justify-items-center">
             <p id="letterPrompt" class="ml-[2vw]">Can you sign an <strong>'a'</strong>?<br></p>
             <p id="letterPromptCaption" class="text-[2vw] ml-[2vw]">Hint: Try moving your hand around the screen</p>
 
@@ -31,9 +31,9 @@
         </div>
 
         <!-- <p class="text-[5vw] bg-amber-50 mt-[2vw] rounded-3xl">Speed Mode</p> -->
-        <div class=" w-1/4 center content-center">
+        <div class="mr-10 w-1/4 center content-center">
             <button onclick="location.href='index.html'" id="MainBtn" type="button" class="opacity-50 hover:bg-amber-300 bg-amber-200 h-[5vw] w-[10vw] mx-[20%] mt-[40%] center text-black text-xl  border-solid border-amber-300 align-middle rounded-lg  text-center inline-flex items-center justify-center" style=" opacity: 1;">
-                <p>Main Menu⏩</p><br>
+                <p class="text-xl">Main Menu</p><br>
             </button>
         </div>
     </div>
@@ -72,19 +72,19 @@
 
 <div class="... flex items-center justify-center">
     <footer class="bg-amber-100 bottom-0 absolute">
-        <div class="... flex items-center justify-center w-full mx-auto max-w-screen-xl p-4">
-        <ul class="flex flex-wrap items-center mt-3 sm:mt-0">
-            <li>
-                <a href="about_page.html" class="hover:underline md:mr-6 ">About</a>
-            </li>
-            <li>
-                <a href="credits_page.html" class="ml-10 hover:underline md:mr-6">Credits</a>
-            </li>
-            <p class="ml-10">This material is based upon work supported by the National Science Foundation under Grant No. 2112633.</p>
-            
-        </ul>
-        </div>
-    </footer>
+    <div class="... flex items-center justify-center w-full mx-auto max-w-screen-xl p-2">
+    <ul class="flex flex-wrap items-center mt-3 sm:mt-0">
+        <li>
+            <a href="about_page.html" class="hover:underline md:mr-6 ">About</a>
+        </li>
+        <li>
+            <a href="credits_page.html" class="ml-10 hover:underline md:mr-6">Credits</a>
+        </li>
+        <p class="ml-10">This material is based upon work supported by the National Science Foundation under Grant No. 2112633.</p>
+        
+    </ul>
+    </div>
+</footer>
 </div>
 
 <!--  -->
