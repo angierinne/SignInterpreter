@@ -155,7 +155,7 @@ function tutorialNext() {
             tutorial_counter += 1;
             break;
         case 6:
-            document.getElementById("letterPrompt").innerHTML = "Congratulations, you finished free mode!";
+            document.getElementById("letterPrompt").innerHTML = "You finished free mode!";
             document.getElementById("letterPromptCaption").innerHTML = "When you're ready, try out speed mode and test your ASL skills";
             document.getElementById("speedBtn").disabled = false;
             document.getElementById("speedBtn").style.opacity = "1";
