@@ -55,6 +55,7 @@ html {
 */
 
 body {
+  min-height: 100vh;
   margin: 0;
   /* 1 */
   line-height: inherit;
@@ -564,12 +565,49 @@ video {
   border-width: 0;
 }
 
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  padding-bottom: 2.5rem;    
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;         
+}
+
+.w-40 {
+  width: 10rem;
+}
+
+.h-96 {
+  height: 24rem;
+}
+
 .visible {
   visibility: visible;
 }
 
 .invisible {
   visibility: hidden;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.static {
+  position: static;
+}
+
+.sticky {
+  position: sticky;
+  top: 100%;
 }
 
 .absolute {
@@ -580,9 +618,19 @@ video {
   position: relative;
 }
 
+.inset-x-0 {
+  left: 0px;
+  right: 0px;
+}
+
 .bottom-16 {
   bottom: 4rem;
 }
+
+.bottom-0 {
+  bottom: 0px;
+}
+
 
 .left-0 {
   left: 0px;
@@ -713,11 +761,11 @@ video {
 }
 
 .mr-24 {
-  margin-left: 6rem;
+  margin-right: 6rem;
 }
 
 .mr-10 {
-  margin-left: 2.5rem;
+  margin-right: 2.5rem;
 }
 
 .mr-\[10vw\] {
@@ -782,6 +830,10 @@ video {
 
 .hidden {
   display: none;
+}
+
+.h-min {
+  height: min-content;
 }
 
 .h-1\/2 {
