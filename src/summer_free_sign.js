@@ -129,7 +129,7 @@ function tutorialNext() {
         case 4:
             // user has signed all the summer letters and needs to be shown the model select button
             document.getElementById("letterPrompt").innerHTML = "Congratulations, you finished summer mode!";
-                document.getElementById("letterPromptCaption").innerHTML = "Click back on the main menu!";
+                document.getElementById("letterPromptCaption").innerHTML = null;
                 document.getElementById("MainBtn").disabled = false;
                 document.getElementById("MainBtn").style.opacity = "1";
                 document.getElementById("MainBtn").innerHTML = "Main Menu";
