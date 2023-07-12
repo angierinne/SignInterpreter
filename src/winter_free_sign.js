@@ -128,7 +128,7 @@ function tutorialNext() {
 
         case 4:
             // user has signed all the summer letters and needs to be shown the model select button
-            document.getElementById("letterPrompt").innerHTML = "Congratulations, you finished the winter mode!";
+            document.getElementById("letterPrompt").innerHTML = "Congratulations, you finished winter mode!";
                 document.getElementById("letterPromptCaption").innerHTML = "Click back on the main menu!";
                 document.getElementById("MainBtn").disabled = false;
                 document.getElementById("MainBtn").style.opacity = "1";
@@ -381,7 +381,7 @@ function confirmLetter() {
 
             tutorialNext();
             // no more prompts to give
-            if (tutorial_counter > 6) {
+            if (tutorial_counter > 4) {
                 promptIndex = -1;
             } else {
                 promptIndex = 0;
