@@ -129,13 +129,14 @@ function tutorialNext() {
         case 4:
             // user has signed all the summer letters and needs to be shown the model select button
             document.getElementById("letterPrompt").innerHTML = "Congratulations, you finished winter mode!";
-                document.getElementById("letterPromptCaption").innerHTML = "Click back on the main menu!";
+                document.getElementById("letterPromptCaption").innerHTML = null;
                 document.getElementById("MainBtn").disabled = false;
                 document.getElementById("MainBtn").style.opacity = "1";
                 document.getElementById("MainBtn").innerHTML = "Main Menu";
                 tutorial_counter += 1;
             // tutorial counter will increase when they click the winter model
             break;
+        /*
         case 5:
             document.getElementById("overlay").style.visibility = "hidden";
             document.getElementById("letterPromptCaption").innerHTML = "Hint: Try moving your hand around the screen";
@@ -157,6 +158,8 @@ function tutorialNext() {
                 document.getElementById("MainBtn").style.opacity = "1";
                 document.getElementById("MainBtn").innerHTML = "Main Menu";
                 tutorial_counter += 1;
+
+                */
                
     }
 }
