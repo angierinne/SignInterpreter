@@ -595,7 +595,7 @@ video {
 
 .sticky {
   position: sticky;
-  top: 100%;
+  top: 100%
 }
 
 .absolute {
@@ -1168,6 +1168,16 @@ video {
 
 .text-5xl {
   font-size: 3rem;
+  line-height: 1;
+}
+
+.text-6xl {
+  font-size: 3.75rem; /* 60px */
+  line-height: 1;
+}
+
+.text-7xl {
+  font-size: 4.5rem; /* 72px */
   line-height: 1;
 }
 
