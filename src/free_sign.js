@@ -26,8 +26,8 @@ let top_character = 'd';
 
 let predictions;
 // // set's of letters for each model
-let summerLetters = ['a', 'b', 'c', 'd', 'l', '-'];
-let summerConfidence = {
+let blueLetters = ['a', 'b', 'c', 'd', 'l', '-'];
+let blueConfidence = {
     'a': [],
     'b': [],
     'c': [],
@@ -36,8 +36,8 @@ let summerConfidence = {
     '-': []
 };
 
-let winterLetters = ['d', 'e', 'f', 'g', 'i', '-'];
-let winterConfidence = {
+let redLetters = ['d', 'e', 'f', 'g', 'i', '-'];
+let redConfidence = {
     'd': [],
     'e': [],
     'f': [],
@@ -47,17 +47,17 @@ let winterConfidence = {
 };
 
 let letters;
-// let letters = summerLetters;
+// let letters = blueLetters;
 // this tracks where we are in the letters so the prompts cover them all
 let promptIndex = 0;
 let model;
-let summerClassifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/0_xhWMn4A/'+ 'model.json');
-let winterClassifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/oalxd3LWt/'+ 'model.json');
+let blueClassifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/0_xhWMn4A/'+ 'model.json');
+let redClassifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/oalxd3LWt/'+ 'model.json');
 const average = array => array.reduce((a, b) => a + b) / array.length;
 
 // Load the model first
 function preload() {
-    document.getElementById("modelSelect").value = "summer";
+    document.getElementById("modelSelect").value = "blue";
     getModel();
 
 }
@@ -65,16 +65,16 @@ function preload() {
 // Will need to update with the new model links -> Currently all using the same model
 function getModel() {
     model = document.getElementById("modelSelect").value;
-    if (model == "summer") {
-      // summer
-      classifier = summerClassifier;
-      letters = summerLetters;
-      confidenceArray = summerConfidence;
+    if (model == "blue") {
+      // blue
+      classifier = blueClassifier;
+      letters = blueLetters;
+      confidenceArray = blueConfidence;
     } else {
-      // winter
-      classifier = winterClassifier;
-      letters = winterLetters;
-      confidenceArray = winterConfidence;
+      // red
+      classifier = redClassifier;
+      letters = redLetters;
+      confidenceArray = redConfidence;
     }
 
     for (i in confidenceArray) {
@@ -126,7 +126,7 @@ function tutorialNext() {
             break;
 
         case 4:
-            // user has signed all the summer letters and needs to be shown the model select button
+            // user has signed all the blue letters and needs to be shown the model select button
             isPaused = true;
             document.getElementById("overlay").style.visibility = "visible";
             document.getElementById("overlay").style.opacity = "85%";
@@ -139,7 +139,7 @@ function tutorialNext() {
             document.getElementById("modelSelect").disabled = false;
             document.getElementById("modelSelect").style.opacity = "1";
             tutorial_counter += 1;
-            // tutorial counter will increase when they click the winter model
+            // tutorial counter will increase when they click the red model
             break;
         case 5:
             document.getElementById("overlay").style.visibility = "hidden";
@@ -353,8 +353,8 @@ function statistics() {
 function switchModel() {
     // function activates when the user selects a model
     let selector = document.getElementById("modelSelect")
-    // Am I waiting for them to click winter?
-    if (tutorial_counter == 5 && selector.value == "winter") {
+    // Am I waiting for them to click red?
+    if (tutorial_counter == 5 && selector.value == "red") {
         // indicate that the user can proceed
         // disable the button so they can't change it during this phase
         document.getElementById("modelSelect").disabled = true;
