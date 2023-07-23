@@ -18,8 +18,8 @@ let randomCharacters = [];
 
 let predictions;
 // // set's of letters for each model
-let summerLetters = ['a', 'b', 'c', 'd', 'l', '-'];
-let summerConfidence = {
+let blueLetters = ['a', 'b', 'c', 'd', 'l', '-'];
+let blueConfidence = {
     'a': [],
     'b': [],
     'c': [],
@@ -27,8 +27,8 @@ let summerConfidence = {
     'l': [],
     '-': []
 };
-let winterLetters = ['d', 'e', 'f', 'g', 'i', '-'];
-let winterConfidence = {
+let redLetters = ['d', 'e', 'f', 'g', 'i', '-'];
+let redConfidence = {
     'd': [],
     'e': [],
     'f': [],
@@ -45,8 +45,8 @@ let model;
 let correctModel = "";
 let isModelCorrect = false;
 
-let summerClassifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/0_xhWMn4A/'+ 'model.json');
-let winterClassifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/oalxd3LWt/'+ 'model.json');
+let blueClassifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/0_xhWMn4A/'+ 'model.json');
+let redClassifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/oalxd3LWt/'+ 'model.json');
 
 let score = 0;
 let incorrectModelAttempts = 0;
@@ -131,19 +131,19 @@ function gotResult(error, results) {
 function getModel() {
 	let randomValue = Math.random() < 0.5;
 	if (randomValue) {
-		// summer
-		classifier = summerClassifier;
-		correctModel = "summer";
-		//letters = JSON.parse(JSON.stringify(summerLetters));
+		// blue
+		classifier = blueClassifier;
+		correctModel = "blue";
+		//letters = JSON.parse(JSON.stringify(blueLetters));
 		modelNum = 0;
-		confidenceArray = summerConfidence;
+		confidenceArray = blueConfidence;
 	} else {
-		// winter
-		classifier = winterClassifier;
-		correctModel = "winter";
-		//letters = JSON.parse(JSON.stringify(winterLetters));
+		// red
+		classifier = redClassifier;
+		correctModel = "red";
+		//letters = JSON.parse(JSON.stringify(redLetters));
 		modelNum = 1;
-		confidenceArray = winterConfidence;
+		confidenceArray = redConfidence;
 	}
 
 	predictions = null;
