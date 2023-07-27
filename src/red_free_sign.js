@@ -106,62 +106,23 @@ function tutorialNext() {
     switch(tutorial_counter) {
         case 1:
             document.getElementById("tutorialPrompt1").style.visibility = "hidden";
-            document.getElementById("tutorialPrompt2").style.visibility = "visible";
-            document.getElementById("videoHighlight").style.visibility = "visible";
+            document.getElementById("overlay").style.visibility = "hidden";
             tutorial_counter += 1;
+            isPaused = false;
             break;
         case 2:
-            document.getElementById("tutorialPrompt2").style.visibility = "hidden";
-            document.getElementById("videoHighlight").style.visibility = "hidden";
-            document.getElementById("tutorialPrompt3").style.visibility = "visible";
-            document.getElementById("statsHighlight").style.visibility = "visible";
-            tutorial_counter += 1;
-            break;
-        case 3:
-            document.getElementById("tutorialPrompt3").style.visibility = "hidden";
-            document.getElementById("statsHighlight").style.visibility = "hidden";
-            document.getElementById("overlay").style.visibility = "hidden";
-            // console.log("DEBUGGING: SET IS PAUSED TO FALSE HERE WHEN DONE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-            isPaused = false;
-            tutorial_counter += 1;
-            break;
-
-        case 4:
-            // user has signed all the blue letters and needs to be shown the model select button
+    
             document.getElementById("letterPrompt").innerHTML = "Congratulations, you finished red mode!";
                 document.getElementById("letterPromptCaption").innerHTML = null;
                 document.getElementById("MainBtn").disabled = false;
                 document.getElementById("MainBtn").style.opacity = "1";
                 document.getElementById("MainBtn").innerHTML = "Main Menu";
+                isPaused = true;
                 tutorial_counter += 1;
-            // tutorial counter will increase when they click the red model
             break;
-        /*
-        case 5:
-            document.getElementById("overlay").style.visibility = "hidden";
-            document.getElementById("letterPromptCaption").innerHTML = "Hint: Try moving your hand around the screen";
-            document.getElementById("modelSelect").disabled = true;
-            document.getElementById("modelSelect").style.opacity = "0.5";
-            for (i in confidenceArray) {
-                confidenceArray[i] = [];
-            }
-            top_character = 'd';
-            predictions = null;
-            isPaused = false;
-            tutorial_counter += 1;
-            break;
-            
-        case 6:
-                document.getElementById("letterPrompt").innerHTML = "Congratulations, you finished free mode!";
-                document.getElementById("letterPromptCaption").innerHTML = "When you're ready, try out speed mode and test your ASL skills";
-                document.getElementById("MainBtn").disabled = false;
-                document.getElementById("MainBtn").style.opacity = "1";
-                document.getElementById("MainBtn").innerHTML = "Main Menu";
-                tutorial_counter += 1;
-
-                */
-               
     }
+               
+    
 }
 
 function setup() {
